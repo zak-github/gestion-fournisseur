@@ -52,7 +52,9 @@ class FournisseurController extends AbstractActionController
                 return $this->redirect()->toRoute('fournisseur');
             }
         }
-        return array('form' => $form);
+        return array('form' => $form,
+            
+    );
     }
     //*************************************edit action
 

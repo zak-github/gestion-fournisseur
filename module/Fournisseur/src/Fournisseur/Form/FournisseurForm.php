@@ -50,9 +50,11 @@ class FournisseurForm extends Form
         ));
 
         $this->add(array(
-            'name' => 'compte',
+            'name' => 'n_compte',
+
             'attributes' => array(
                 'class' => 'form-control',
+                'id' => 'Auto',
             ),
             'type' => 'Text',
             'options' => array(
@@ -75,6 +77,119 @@ class FournisseurForm extends Form
         ));
 
 
+//*********array address
+  $this->add(array(
+            'name' => 'ville',
+            'attributes' => array(
+                'class' => 'form-control',
+                'placeholder'=>'Ville'
+            ),
+            'type' => 'Text',
+            'options' => array(
+                'label' => 'ville',
+            ),
+
+
+        ));
+    $this->add(array(
+            'name' => 'fix',
+            'attributes' => array(
+                'class' => 'form-control',
+                'placeholder'=>'Téléphone Fix'
+            ),
+            'type' => 'Text',
+            'options' => array(
+                'label' => 'Fix',
+            ),
+
+
+        ));
+      $this->add(array(
+            'name' => 'cp',
+            'attributes' => array(
+                'class' => 'form-control',
+                'placeholder'=>'code postal'
+            ),
+            'type' => 'Text',
+            'options' => array(
+                'label' => 'Code Postal',
+            ),
+
+
+        ));
+      $this->add(array(
+            'name' => 'pays',
+            'attributes' => array(
+                'class' => 'form-control',
+                'placeholder'=>'Pays'
+            ),
+            'type' => 'Text',
+            'options' => array(
+                'label' => '',
+            ),
+
+
+        ));
+
+        //******************end var address
+
+//*********array address fact
+  $this->add(array(
+            'name' => 'villef',
+
+            
+            'attributes' => array(
+                'class' => 'form-control',
+                'placeholder'=>'Ville'
+            ),
+            'type' => 'Text',
+            'options' => array(
+                'label' => 'ville',
+            ),
+
+
+        ));
+    $this->add(array(
+            'name' => 'fixf',
+            'attributes' => array(
+                'class' => 'form-control',
+                'placeholder'=>'Téléphone Fix'
+            ),
+            'type' => 'Text',
+            'options' => array(
+                'label' => 'Fix',
+            ),
+
+
+        ));
+      $this->add(array(
+            'name' => 'cpf',
+            'attributes' => array(
+                'class' => 'form-control',
+                'placeholder'=>'code postal'
+            ),
+            'type' => 'Text',
+            'options' => array(
+                'label' => 'Code Postal',
+            ),
+
+
+        ));
+      $this->add(array(
+            'name' => 'paysf',
+            'attributes' => array(
+                'class' => 'form-control',
+                'placeholder'=>'Pays'
+            ),
+            'type' => 'Text',
+            'options' => array(
+                'label' => '',
+            ),
+
+
+        ));
+
+        //******************end var address
         $this->add(array(
             'name' => 'submit',
             'type' => 'Submit',
@@ -87,6 +202,7 @@ class FournisseurForm extends Form
                 'label' => 'nouveau',
             ),
         ));
+
 
 
     }

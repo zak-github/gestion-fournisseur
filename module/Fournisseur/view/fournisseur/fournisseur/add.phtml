@@ -1,3 +1,9 @@
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
 <?php
 
 
@@ -14,8 +20,17 @@ echo $this->form()->openTag($form);
 echo $this->formHidden($form->get('id'));
 $mobile = $form->get('mobile');
 $intitule = $form->get('intitule');
-$compte = $form->get('compte');
+$compte = $form->get('n_compte');
 $email = $form->get('email');
+$ville = $form->get('ville');
+$cp = $form->get('cp');
+$fix = $form->get('fix');
+$pays = $form->get('pays');
+$email = $form->get('email');
+$villef = $form->get('villef');
+$cpf = $form->get('cpf');
+$fixf = $form->get('fixf');
+$paysf = $form->get('paysf');
 
 $sub = $form->get('submit');
 /*
@@ -75,7 +90,22 @@ echo $this->form()->closeTag();*/
                     <?= $this->formElementErrors($email); ?>
                 </small>
             </div>
+<div class="col-md-3">
+                <label for="">
+                   Ajouter Adresse
+                </label>
 
+                <select name="" id="SlctAdd" onchange="SlctA(this)" class="form-control">
+                    <option id="A_S" value="0">Veuillez Choississez Le type</option>
+                    <option id="A_p" value="1">Address Principal</option>
+                    <option id="A_f" value="2">Address Facturation</option>
+                    <option id="A_e" value="3">Address Enlévement</option>
+                    
+
+                </select>
+
+                
+            </div>
 
         </div>
 
@@ -84,8 +114,160 @@ echo $this->form()->closeTag();*/
     </div>
 
     <div class="panel-body">
+<div class="row" >
+    <div class=" col-md-3" id="Addr_P" style="display:none">
+             
+<div class="panel panel-default">
+      <div class="panel-heading">
+      <h3 class="panel-title">Adresse Principal <i class="glyphicon glyphicon-remove" id="X_p" title="Fermé" style="padding-left:50px;cursor:pointer"></i></h3></h3>
+       </div>
+     <div class="panel-body">
+    <!--** pannel start-->
+
+      <div class="row" >
+        <div class="col-md-10" >
+                <label for="">
+                   Ajouté
+                </label>
+
+                <?= $this->formelement($ville); ?>
+
+                <small class="form-text text-muted" style="text-align: center">
+                    <?= $this->formElementErrors($ville); ?>
+                </small>
+            </div>
+       </div>
+       <div class="row" >
+        <div class="col-md-10" >
+                <label for="">
+                   
+                </label>
+
+                <?= $this->formelement($fix); ?>
+
+                <small class="form-text text-muted" style="text-align: center">
+                    <?= $this->formElementErrors($fix); ?>
+                </small>
+            </div>
+       </div>
+
+       <div class="row" >
+        <div class="col-md-10" >
+                <label for="">
+                   
+                </label>
+
+                <?= $this->formelement($cp); ?>
+
+                <small class="form-text text-muted" style="text-align: center">
+                    <?= $this->formElementErrors($cp); ?>
+                </small>
+            </div>
+       </div>
+
+       <div class="row" >
+        <div class="col-md-10" >
+                <label for="">
+                   
+                </label>
+
+                <?= $this->formelement($pays); ?>
+
+                <small class="form-text text-muted" style="text-align: center">
+                    <?= $this->formElementErrors($pays); ?>
+                </small>
+            </div>
+       </div>
+
+    <!--*** end pannel body-->
+    </div>
+</div>
+
+ </div>
+            <div class="col-md-3" id="Addr_F" style="display:none">
+                <div class="panel panel-default">
+      <div class="panel-heading">
+      <h3 class="panel-title">Adresse Facturation <i class="glyphicon glyphicon-remove" id="X_f" title="Fermé" style="padding-left:50px;cursor:pointer"></i></h3></h3>
+       </div>
+     <div class="panel-body">
+
+ <!--** pannel start fact-->
+
+      <div class="row" >
+        <div class="col-md-10" >
+                <label for="">
+                  Cordonnées Facturation
+                </label>
+
+                <?= $this->formelement($villef); ?>
+
+                <small class="form-text text-muted" style="text-align: center">
+                    <?= $this->formElementErrors($villef); ?>
+                </small>
+            </div>
+       </div>
+       <div class="row" >
+        <div class="col-md-10" >
+                <label for="">
+                   
+                </label>
+
+                <?= $this->formelement($fixf); ?>
+
+                <small class="form-text text-muted" style="text-align: center">
+                    <?= $this->formElementErrors($fixf); ?>
+                </small>
+            </div>
+       </div>
+
+       <div class="row" >
+        <div class="col-md-10" >
+                <label for="">
+                   
+                </label>
+
+                <?= $this->formelement($cpf); ?>
+
+                <small class="form-text text-muted" style="text-align: center">
+                    <?= $this->formElementErrors($cpf); ?>
+                </small>
+            </div>
+       </div>
+
+       <div class="row" >
+        <div class="col-md-10" >
+                <label for="">
+                   
+                </label>
+
+                <?= $this->formelement($paysf); ?>
+
+                <small class="form-text text-muted" style="text-align: center">
+                    <?= $this->formElementErrors($paysf); ?>
+                </small>
+            </div>
+       </div>
+
+    <!--*** end pannel body-->
 
 
+    </div>
+</div>
+
+            </div>
+        <div class="col-md-3" id="Addr_E" style="display:none">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                   <h3 class="panel-title">Adresse Enlévement <i class="glyphicon glyphicon-remove" id="X_e" title="Fermé" style="padding-left:50px;cursor:pointer"></i></h3>
+                   </div>
+                  <div class="panel-body">
+                 content
+                  </div>
+                </div>
+
+        </div>
+</div>
+           
 
     </div>
     <div class="panel-footer" style="background-color:white">
@@ -127,7 +309,53 @@ echo $this->form()->closeTag();
 
 ?>
 
-<script>
+ <script>
+ $(document).ready(function(){
+   
+ }) 
+
+function SlctA(vr){
+var Selected= vr.value;
+if(Selected=="1"){
+
+$("#Addr_P").show(1000);
+$("#A_p").hide(1000);
+
+}
+if(Selected=="2"){
+
+$("#Addr_F").show(1000);
+$("#A_f").hide(1000);
+
+}
+if(Selected=="3"){
+
+$("#Addr_E").show(1000);
+$("#A_e").hide(1000);
+
+}
+if(Selected=="0"){
+
+$("#A_e").show();
+    $("#A_f").show();
+    $("#A_p").show();
+}
+
+
+
+
+}//end function
+
+
+$("#X_p").click(function(){
+    $("#Addr_P").hide(1000);
+});
+$("#X_f").click(function(){
+    $("#Addr_F").hide(1000);
+});
+$("#X_e").click(function(){
+    $("#Addr_E").hide(1000);
+});
 
 
 </script>
